@@ -1,0 +1,12 @@
+{% extends 'compliance/base_auth.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+	{% for user in users %}
+		<div class="log">
+			<h3>{{ user.first_name }} {{ user.last_name }}</h3>
+		</div>	
+	{% endfor %}
+{% endblock %}

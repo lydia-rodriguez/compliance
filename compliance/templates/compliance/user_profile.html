@@ -1,0 +1,33 @@
+{% extends 'compliance/base_auth.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+	<a class="btn btn-default" href="{% url 'user_edit' username=user.username %}"><span class="glyphicon glyphicon-pencil"></span></a>
+
+	<h1>{{ user.first_name }} {{ user.last_name }}</h1>
+	<p>Username: {{ user.username }}</p>
+	<p>First Name: {{ user.first_name }}</p>
+	<p>Last Name: {{ user.last_name }}</p>
+	<p>Email: {{ user.email }}</p>
+	<p>Extension: {{ profile.extension }}</p>
+	<p>Title: {{ profile.title }}</p>
+	<p>Address: {{ profile.address }}</p>
+	<p>City: {{ profile.city }}</p>
+	<p>State: {{ profile.state }}</p>
+	<p>Zip: {{ profile.zip }}</p>
+	<p>Home Phone: {{ profile.home_phone }}</p>
+	<p>Mobile Phone: {{ profile.mobile_phone }}</p>
+	<p>Birth Date: {{ profile.birth_date }}</p>
+	
+	<h2>Emergency Contact Information</h2>
+	<p>First Name: {{ profile.emergency_contact_first_name }}</p>
+	<p>Last Name: {{ profile.emergency_contact_last_name }}</p>
+	<p>Phone: {{ profile.emergency_contact_phone }}</p>
+	<p>Doctor's Name: {{ profile.emergency_contact_doctor }}</p>
+	<p>Doctor's Phone: {{ profile.emergency_contact_doctor_phone }}</p>
+	
+{% endblock %}
+

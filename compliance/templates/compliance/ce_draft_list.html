@@ -1,0 +1,12 @@
+{% extends 'compliance/base_auth.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+	{% for log in logs %}
+		<div class="log">
+			<h1><a href="{% url 'ce_log_detail' pk=log.pk %}">{{ log.required_CE }}</a></h1>
+		</div>	
+	{% endfor %}
+{% endblock %}

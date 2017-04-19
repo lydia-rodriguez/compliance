@@ -1,0 +1,22 @@
+{% extends 'compliance/base_auth.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+	<div class="log">
+		<h1>{{ log.required_CE }}</h1>
+		<p>Oversight Entity: {{ log.oversight_entity }}</p>
+		<p>Repeat: {{ log.repeat }}</p>
+		<p>Hours: {{ log.hours }}</p>
+		<p>Date Completed: {{ log.date_completed }}</p>
+		<p>Top Items Learned: {{ log.top_items_learned }}</p>
+		{% if log.submit_date %}
+			<div class="date">
+				<p>Date Submitted: {{ log.submit_date }}</p>
+			</div>
+		{% endif %}
+		<a class="btn btn-default" href="{% url 'ce_log_edit' pk=log.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		<a class="btn btn-default" href="{% url 'ce_log_remove' pk=log.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+	</div>
+{% endblock %}
